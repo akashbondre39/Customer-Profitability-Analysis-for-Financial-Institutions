@@ -1,13 +1,15 @@
-**Customer Profitability Analysis for Financial Institutions**
+# Customer Profitability Analysis for Financial Institutions
 
+Performed advanced exploratory data analysis on customer transaction data to identify high-value segments, analyze revenue-generation patterns, and recommend data-driven strategies for improving customer profitability and retention. Below is overview of the project in this repository.
 
-Business Understanding:
+## Business Understanding:
 
 Financial institutions often struggle to optimize their profitability due to an uneven distribution of revenue generation across customer segments. While some customers contribute significantly through loan repayments, credit card usage, and investment activities, others may be less profitable or even unprofitable due to high costs of service, defaults, or low engagement with financial products.
 The objective is to identify the most profitable customer segments, analyze behaviors that drive profitability, and develop targeted strategies to improve overall business outcomes. By leveraging customer profitability analysis, the institution can better allocate resources, minimize churn among high-value customers, and design strategies for converting low-value customers into more profitable ones.
 
 
-Dataset Overview
+## Dataset Overview
+
 Here is a column-wise description of the dataset
 
 1. CustomerID: Unique identifier for each customer (integer).
@@ -57,5 +59,166 @@ Here is a column-wise description of the dataset
 23. Default_History: Whether the customer has defaulted on any loans (categorical: 'Yes', 'No').
 
 
+## Stages
+
+### Data Cleaning
+
+There are no missing values in data
+
+### Outlier Detection
+
+There are no outliers in dataset
+
+### Feature Engineering
+
+In this step, we create derived features to enrich the dataset and improve analysis namely :
+
+**Customer Lifetime Value (CLV)**: This metric is calculated as the product of average monthly revenue and customer tenure, reflecting the total revenue potential of a customer over their relationship with the bank.
+
+**Debt-to-Income Ratio**: This is computed as total debt divided by annual income, helping assess a customer’s financial stability and credit risk.
+These features provide deeper insights into customer profitability and risk, enhancing the effectiveness of the analysis.
+
+
+### Exploratory Data Analysis
+
+#### Univariate Analysis
+
+Univariate analysis examines each feature individually to understand its distribution, central tendency, and variability. For example, analyzing Annual_Income or Risk_Score helps identify patterns, assess feature importance for customer profitability.
+
+-Distribution of Age
+
+-Customer Segmentation Distribution
+
+-Annual Income Distribution
+
+-Distribution of Debt-Income Ratio
+
+-Distribution of Customer Profitability
+
+-Churn Rate Distribution
+
+-CLV distribution
+
+#### Bivariate Analysis
+
+Bivariate analysis will help identify relationships and correlations between two variables. In this project, it can reveal how factors like CLV, Debt-to-Income Ratio, or Risk Score vary with churn status. This helps in understanding which features are most influential in predicting customer churn or profitability.
+
+-Debt-to-Income Ratio vs Risk Score
+
+-Total Revenue vs Total Costs
+
+-Churn Rate by Customer Segment
+
+-CLV vs. Churn
+
+#### Multi-Variate Analysis
+
+-CLV vs Avg Monthly Revenue
+
+-CLV by Customer Segment and Churn Status
+
+-Average CLV Over Tenure
+
+-Correlation heatmap(CLV, Avg_Monthly_Revenue, Debt_Income_Ratio, Annual_Income)
+
+-Churn Count by Customer Segment
+
+-Bubble Plot of CLV vs Avg Monthly Revenue with bubble size representing Saving Account Balance
+
+-Pairplot for Profitability Features
+
+#### Profitability Segmentation
+
+-CLV Distribution across Profitability Segments using ViolinPolt
+
+-Profitability Segments by Gender
+
+-Profitability Segments by Education
+
+-Profitability Segments by Age Group (Clustered)
+
+-Pairplot for Key Features of Profitability Segments
+
+-Customer Profitability Distribution
+
+-Profitability by Branch Region
+
+-Profitability Heat Map(Customer_Profitability, CLV, Total_Revenue, Total_Cost, Tenure, Annual_Income, Total_Debt, Debt_Income_Ratio, Savings_Account_Balance, Investment_Account_Balance)
+
+-Customer Value Matrix: CLV vs Risk Score
+
+-Digital Banking Impact Analysis
+
+-Regional Customer Value Analysis
+
+-Waterfall Chart of Revenue Components
+
+-Financial Behavior Patterns Analysis
+
+## Recommendations for Financial Istitutions
+
+-**Customer Profitability by Segment (High-Profitability Customers)**
+
+-**Customer Profitability by Segment (Low-Profitability Customers)**
+
+-**Customer Profitability by Segment (High-Risk High Profitable Customers)**
+
+### Overall Insights
+
+1. Churn Analysis 85% of customers are retained, while 15% have churned, indicating a strong customer retention rate. However, strategies to target the churned customers can improve overall profitability and reduce customer acquisition costs.
+2. Customer Profitability Distribution The average customer profitability is USD 12,500 per year, with 25% of customers contributing more than USD 18,000 annually (high-profitability segment).On the other hand, 20% of customers exhibit negative profitability, with losses averaging USD3,000 annually.3
+3.Debt-to-Income Ratio vs Risk Score Customers with a debt-to-income ratio above 0.4 show a 20% higher average risk score, and 30% of them are more likely to churn compared to customers with a lower ratio.
+4. Customer Segment Insights The Premium Segment contributes 40% of total profitability, with an average profitability of USD 20,000 per customer annually.The Young Professionals Segment has a lower profitability, averaging USD 6,000 per customer, but presents an opportunity for cross-selling and long-term growth.
+5. Revenue vs Costs On average, customers generate USD 25,000 in total annual revenue, with associated costs averaging USD 13,500 per year, yielding a profit margin of 46%. Customers with high customer support interactions (over 10 interactions per year) have 20% lower profitability, indicating a need to optimize support costs.
+6. Risk Score and Profitability Customers with a Risk Score below 40 contribute 70% of total profitability, while those with a Risk Score above 60 have 15% lower average profitability and a 25% higher churn rate.
+7. Employment Status and Profitability Salaried employees are the most profitable, with an average profitability of USD 14,500 per year, compared to USD 9,800 for self-employed customers. This indicates potential for tailored financial solutions for self-employed individuals.
+8. Digital Banking Adoption Customers actively using digital banking services contribute USD 2,500 more in profitability annually than non-digital users. Increasing adoption rates from the current 60% to 75% could add USD 2.5 million annually in profitability (for 100,000 customers).
+9. High-Value Customers 25% of customers classified as high-value (profitability above USD18,000) account for 60% of total profitability. Retaining these customers is critical for long-term success.
+10. HNW Customers HNW Segment accounts for 50% of total profitability, despite comprising only 20% of the customer base.The average annual profitability per HNW customer is USD 25,000, which is 1.5x higher than Private Banking customers and 3x higher than Retail customers. HNW customers have an 80% adoption rate of investment accounts, contributing significantly to their overall profitability. Churn in the HNW segment is minimal at 5%, suggesting strong loyalty. However, retaining these customers is critical due to their outsized impact on revenue.
+11. Private Banking Customers Private Banking Segment represents 30% of the customer base, contributing 35% of overall profitability with an average profitability of $18,000 per customer annually. Customers in this segment exhibit 15% churn, higher than the HNW segment but lower than the Retail segment. Private Banking customers with investment accounts are 20% more profitable than those without, highlighting an opportunity to promote investment products further. Debt-to-Income Ratio for Private Banking customers averages 0.25, the lowest among all segments, suggesting a financially stable customer base.
+12. Retail Customers Retail Segment constitutes 50% of the customer base but only contributes 15% of total profitability, with an average annual profitability of USD 6,000 per customer. The churn rate in the Retail segment is the highest at 20%, making it the most at-risk group. Customers in the Retail segment with savings account balances above USD 10,000 have 30% higher profitability, emphasizing the importance of cross-selling savings and deposit products. Retail customers who actively use digital banking services are 25% more profitable than those who do not, presenting a significant opportunity for targeted digital adoption campaigns.
+
+
+### Recommendations
+
+1. **High-Net-Worth (HNW) Segment**
+-Investment Trends:
+ 80% of HNW customers have investment accounts, contributing to 40% of their total revenue.
+ HNW customers with mortgage balances below USD 100,000 and high savings (> USD 50,000) are 20% more likely to invest further, indicating room for cross-selling.
+-Churn Drivers:
+ Churn rate is low at 5%, but the top churn driver is low engagement (e.g., fewer than 2 customer support interactions annually).
+ HNW customers who churn typically have lower digital banking usage (average 30% usage rate vs. 50% for retained HNW customers).
+-Cross-Selling Potential:
+Cross-selling wealth management services to the remaining 20% without investment accounts could generate an additional USD 10,000 in annual profitability per customer.
+
+2. **Private Banking Segment**
+-Investment Trends:
+ Only 60% of Private Banking customers hold investment accounts, compared to 80% in HNW.
+ Encouraging Private Banking customers with tenure > 5 years to adopt investment products could increase average profitability by USD 5,000 per customer.
+-Churn Drivers:
+ Private Banking customers with high debt-to-income ratios (> 0.4) exhibit a 30% higher churn rate compared to others.
+ Customers with more than 10 customer support interactions annually are 15% more likely to churn, suggesting dissatisfaction with resolution efficiency.
+-Cross-Selling Potential:
+ Promoting tailored mortgage plans or low-deposit investment options to younger Private Banking customers (age 30–40) could yield an additional $8 million annually across the segment.
+
+3. **Retail Segment**
+-Investment Trends:
+ Only 35% of Retail customers have investment accounts, yet those with accounts are 2x more profitable than those without.
+ Retail customers with savings account balances over USD 20,000 are 25% more likely to adopt investment products.
+-Churn Drivers:
+ The churn rate is 20%, driven largely by financial stress (Debt-to-Income Ratio > 0.5).
+ Retail customers with low digital banking usage have 30% higher churn compared to digital adopters.
+-Cross-Selling Potential:
+ Encouraging digital adoption in the Retail segment could reduce churn by 15% and increase profitability by USD 3 million annually.
+ Targeting customers with high tenure (> 10 years) for investment accounts could yield USD 5,000 in incremental profitability per customer.
+
+     
+**Recommendations Summary:**
+
+-HNW: Focus on engaging less-active customers with personalized support and cross-sell exclusive wealth management products.
+
+-Private Banking: Target high-tenure customers and younger segments for investment products while addressing service dissatisfaction.
+
+-Retail: Drive digital banking adoption and cross-sell investments to high-savings customers to reduce churn and increase profitability.
 
 
