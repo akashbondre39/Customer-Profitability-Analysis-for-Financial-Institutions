@@ -63,11 +63,9 @@ Here is a column-wise description of the dataset
 
 ### Data Cleaning
 
-There are no missing values in data
 
 ### Outlier Detection
 
-There are no outliers in dataset
 
 ### Feature Engineering
 
